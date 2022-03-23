@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CharacterMovement : MonoBehaviour
+public class AnimationAndMovementController : MonoBehaviour
 {
-    [SerializeField] [Range(5,25)] private float movementSpeed = 20f;
-    [SerializeField] [Range(5,25)] private float speedForLeftRightMovement = 20f;
+    [SerializeField] [Range(5,25)] private float movementSpeed = 5.0f;
+    [SerializeField] [Range(5,25)] private float speedForLeftRightMovement = 5.0f;
 
     void Start()
     {
@@ -30,5 +30,4 @@ public class CharacterMovement : MonoBehaviour
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, -4.1f, 4.1f);
         transform.position = clampedPosition;
     }
-
 }
