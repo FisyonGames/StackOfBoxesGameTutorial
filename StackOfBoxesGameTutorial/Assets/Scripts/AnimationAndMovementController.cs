@@ -14,7 +14,7 @@ public class AnimationAndMovementController : MonoBehaviour
     
     void Update()
     {
-        //transform.position += Vector3.forward * movementSpeed * Time.deltaTime;
+        transform.position += Vector3.forward * movementSpeed * Time.deltaTime;
 
         if(Input.GetKey(KeyCode.LeftArrow) || MobileInput.Instance.swipeLeft)
         {
