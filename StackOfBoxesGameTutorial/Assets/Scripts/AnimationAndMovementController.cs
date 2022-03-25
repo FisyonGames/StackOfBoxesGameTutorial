@@ -6,11 +6,14 @@ public class AnimationAndMovementController : MonoBehaviour
 {
     public static AnimationAndMovementController instance;
 
+    [SerializeField] private Animator characterAnimator;
     [SerializeField] [Range(5,25)] private float movementSpeed = 5.0f;
     [SerializeField] [Range(5,25)] private float speedForLeftRightMovement = 5.0f;
     [SerializeField] private float leftClampXPositionValue = -3.0f;
     [SerializeField] private float rightClampXPositionValue = 3.0f;
     private bool isInEndOfTrack = false;
+    private bool isMoving = false;
+    private bool isKicking = false;
 
     public bool IsInEndOfTrack { get{ return isInEndOfTrack; } set { isInEndOfTrack = value;}}
 
@@ -21,18 +24,34 @@ public class AnimationAndMovementController : MonoBehaviour
 
     void Start()
     {
+        isMoving = false;
         isInEndOfTrack = false;
+        isKicking = false;
     }
     
     void Update()
     {
-        if(!isInEndOfTrack)
+        // İlk hareket için ekrana veya klavye-mouse için herhangi bir tuşa basılacak.
+        if (Input.touchCount > 0 || Input.anyKeyDown)
         {
+            isMoving = true;
+        }
+
+        if(isMoving)
+        {
+            if(!characterAnimator.GetBool("isMoving")) characterAnimator.SetBool("isMoving", true);
             Movement();
         }
-        else
+        if(isInEndOfTrack)
         {
-            transform.position = Vector3.MoveTowards (transform.position, new Vector3(0f, transform.position.y,transform.position.z), speedForLeftRightMovement * Time.deltaTime);
+            if(isMoving) isMoving = false;
+            characterAnimator.SetBool("isMoving", false);
+            transform.position = Vector3.MoveTowards (transform.position, new Vector3(0f, transform.position.y, transform.position.z), speedForLeftRightMovement * Time.deltaTime);
+            if(transform.position.x == 0f) isKicking = true;
+        }
+        if(isKicking)
+        {
+            characterAnimator.SetBool("isKicking", true);
         }
     }
 
