@@ -4,15 +4,39 @@ using UnityEngine;
 
 public class AnimationAndMovementController : MonoBehaviour
 {
+    public static AnimationAndMovementController instance;
+
     [SerializeField] [Range(5,25)] private float movementSpeed = 5.0f;
     [SerializeField] [Range(5,25)] private float speedForLeftRightMovement = 5.0f;
+    [SerializeField] private float leftClampXPositionValue = -3.0f;
+    [SerializeField] private float rightClampXPositionValue = 3.0f;
+    private bool isInEndOfTrack = false;
+
+    public bool IsInEndOfTrack { get{ return isInEndOfTrack; } set { isInEndOfTrack = value;}}
+
+    private void Awake()
+    {
+        if(instance == null) instance = this;
+    }
 
     void Start()
     {
-
+        isInEndOfTrack = false;
     }
     
     void Update()
+    {
+        if(!isInEndOfTrack)
+        {
+            Movement();
+        }
+        else
+        {
+            transform.position = Vector3.MoveTowards (transform.position, new Vector3(0f, transform.position.y,transform.position.z), speedForLeftRightMovement * Time.deltaTime);
+        }
+    }
+
+    private void Movement()
     {
         transform.position += Vector3.forward * movementSpeed * Time.deltaTime;
 
@@ -25,9 +49,8 @@ public class AnimationAndMovementController : MonoBehaviour
             transform.Translate(Vector3.right * Time.deltaTime * speedForLeftRightMovement);
         }
 
-        // Eğer yan engeller yoksa...
         Vector3 clampedPosition = transform.position;
-        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -4.1f, 4.1f);
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, leftClampXPositionValue, rightClampXPositionValue);
         transform.position = clampedPosition;
     }
 }
