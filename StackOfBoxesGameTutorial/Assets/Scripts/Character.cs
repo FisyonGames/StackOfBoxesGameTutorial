@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private Transform parentBoxes;
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
@@ -26,5 +25,17 @@ public class Character : MonoBehaviour
 		{
 			AnimationAndMovementController.instance.IsInEndOfTrack = true;
 		}
+        if(coll.tag == "Obstacle")
+		{
+			DestroyBoxes();
+		}
 	}
+
+    private void DestroyBoxes()
+    {
+        for (int i = 0; i < parentBoxes.childCount; i++)
+        {
+            
+        }
+    }
 }
