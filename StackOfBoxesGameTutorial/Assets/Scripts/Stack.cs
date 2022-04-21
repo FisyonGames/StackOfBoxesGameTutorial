@@ -10,6 +10,8 @@ public class Stack : MonoBehaviour
     [SerializeField] private Transform prevObject;
     [SerializeField] private Transform parent;
 
+    public Transform PrevObject{ get {return prevObject;}  set {prevObject = value;} }
+
     private void Awake()
     {
         if(instance == null) instance = this;
@@ -20,16 +22,11 @@ public class Stack : MonoBehaviour
         distanceBetweenObjects = prevObject.localScale.y;
     }
 
-    public void PickUp(GameObject pickedObject, bool needTag = false, string tag = null, bool downOrUp = true)
+    public void PickUp(GameObject pickedObject)
     {
-        if(needTag)
-        {
-            pickedObject.tag = tag;
-        }
-
         pickedObject.transform.parent = parent;
         Vector3 desPos = prevObject.localPosition;
-        desPos.y += downOrUp ? distanceBetweenObjects : -distanceBetweenObjects;
+        desPos.y += distanceBetweenObjects;
 
         pickedObject.transform.localPosition = desPos;
 
