@@ -7,6 +7,7 @@ public class AnimationAndMovementController : MonoBehaviour
     public static AnimationAndMovementController instance;
 
     [SerializeField] private Animator characterAnimator;
+    [SerializeField] private Transform boxes;
     [SerializeField] [Range(5,25)] private float movementSpeed = 5.0f;
     [SerializeField] [Range(5,25)] private float speedForLeftRightMovement = 5.0f;
     [SerializeField] private float leftClampXPositionValue = -3.0f;
@@ -14,8 +15,10 @@ public class AnimationAndMovementController : MonoBehaviour
     private bool isInEndOfTrack = false;
     private bool isMoving = false;
     private bool isKicking = false;
+    private bool isDancing = false;
 
     public bool IsInEndOfTrack { get{ return isInEndOfTrack; } set { isInEndOfTrack = value;}}
+    public bool IsDancing { get { return isDancing; } set { isDancing = value; } }
 
     private void Awake()
     {
@@ -53,6 +56,10 @@ public class AnimationAndMovementController : MonoBehaviour
         {
             characterAnimator.SetBool("isKicking", true);
         }
+        if (boxes.childCount == 0)
+        {
+            characterAnimator.SetBool("isDancing", true);
+        }
     }
 
     private void Movement()
@@ -72,4 +79,6 @@ public class AnimationAndMovementController : MonoBehaviour
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, leftClampXPositionValue, rightClampXPositionValue);
         transform.position = clampedPosition;
     }
+
+    
 }

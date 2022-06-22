@@ -7,6 +7,7 @@ TagManager:
   - Box
   - EndOfTrack
   - Obstacle
+  - FirstBox
   layers:
   - Default
   - TransparentFX

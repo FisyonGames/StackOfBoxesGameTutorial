@@ -7,30 +7,43 @@ public class Stack : MonoBehaviour
     public static Stack instance;
 
     float distanceBetweenObjects;
-    [SerializeField] private Transform prevObject;
+    [SerializeField] private Transform previousObject;
     [SerializeField] private Transform parent;
 
-    public Transform PrevObject{ get {return prevObject;}  set {prevObject = value;} }
+    public Queue<Transform> stackedBoxes;
+
+    public Transform PrevObject{ get {return previousObject; }  set { previousObject = value;} }
 
     private void Awake()
     {
         if(instance == null) instance = this;
+
+        stackedBoxes = new Queue<Transform>();
+        stackedBoxes.Enqueue(previousObject);
     }
 
     void Start()
     {
-        distanceBetweenObjects = prevObject.localScale.y;
+        distanceBetweenObjects = previousObject.localScale.y;
     }
-
-    public void PickUp(GameObject pickedObject)
+    private void Update()
     {
-        pickedObject.transform.parent = parent;
-        Vector3 desPos = prevObject.localPosition;
+
+    }
+    public void PickUp(Transform pickedObject)
+    {
+        pickedObject.parent = parent;
+
+        stackedBoxes.Enqueue(pickedObject);
+
+        Vector3 desPos = previousObject.localPosition;
         desPos.y += distanceBetweenObjects;
 
-        pickedObject.transform.localPosition = desPos;
+        pickedObject.localPosition = desPos;
+        pickedObject.localRotation = previousObject.localRotation;
+        pickedObject.GetComponent<Rigidbody>().isKinematic = true;
 
-        prevObject = pickedObject.transform;
+        previousObject = pickedObject;
     }
 
     
