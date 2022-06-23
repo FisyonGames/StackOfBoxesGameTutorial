@@ -7,6 +7,7 @@ public class AnimationAndMovementController : MonoBehaviour
     public static AnimationAndMovementController instance;
 
     [SerializeField] private Animator characterAnimator;
+    [SerializeField] private Animator truckAnimator;
     [SerializeField] private Transform boxes;
     [SerializeField] [Range(5,25)] private float movementSpeed = 5.0f;
     [SerializeField] [Range(5,25)] private float speedForLeftRightMovement = 5.0f;
@@ -51,15 +52,17 @@ public class AnimationAndMovementController : MonoBehaviour
             characterAnimator.SetBool("isMoving", false);
             transform.position = Vector3.MoveTowards (transform.position, new Vector3(0f, transform.position.y, transform.position.z), speedForLeftRightMovement * Time.deltaTime);
             if(transform.position.x == 0f) isKicking = true;
+            if (boxes.childCount == 0)
+            {
+                characterAnimator.SetBool("isDancing", true);
+                truckAnimator.SetBool("isTruckMoving", true);
+            }
         }
         if(isKicking)
         {
             characterAnimator.SetBool("isKicking", true);
         }
-        if (boxes.childCount == 0)
-        {
-            characterAnimator.SetBool("isDancing", true);
-        }
+        
     }
 
     private void Movement()

@@ -11,6 +11,7 @@ public class Box : MonoBehaviour
 
     private Vector3 targetPositionToLerp;
     private float lerpSpeed = 5.0f;
+    private float lerpDuration = 1.0f;
 
     private void Start()
     {
@@ -32,8 +33,23 @@ public class Box : MonoBehaviour
     {
         if(isKicked)
         {
-            transform.position = Vector3.Lerp(transform.position, targetPositionToLerp, lerpSpeed * Time.deltaTime);
+            //transform.position = Vector3.Lerp(transform.position, targetPositionToLerp, lerpSpeed * Time.deltaTime);
+            StartCoroutine(LerpPosition(targetPositionToLerp, lerpDuration));
         }
+    }
+
+    IEnumerator LerpPosition(Vector3 targetPosition, float duration)
+    {
+        float time = 0;
+        Vector3 startPosition = transform.position;
+        while (time < duration)
+        {
+            transform.position = Vector3.Lerp(startPosition, targetPosition, time / duration);
+            time += lerpSpeed * Time.deltaTime;
+            yield return null;
+        }
+        transform.position = targetPosition;
+        isKicked = false;
     }
 
     void OnTriggerEnter(Collider obj)
@@ -61,9 +77,6 @@ public class Box : MonoBehaviour
                                           );
         
         transform.parent = truckBedToStack;
-
-        rigidbody.isKinematic = false;
-        
     }
 
 }

@@ -25,8 +25,9 @@ public class Boxes : MonoBehaviour
     {
         if (transform.childCount != 0)
         {
-            if(transform.GetChild(0).tag == "Box") SetNewPositionAfterKick();
+            //if(transform.GetChild(0).tag == "Box") SetNewPositionAfterKick();
             transform.GetChild(0).gameObject.GetComponent<Box>().IsKicked = true;
+            SetNewPositionAfterKick();
         }
     }
 }
