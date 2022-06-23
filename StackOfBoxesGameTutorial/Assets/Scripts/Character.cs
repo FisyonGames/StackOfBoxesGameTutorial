@@ -10,10 +10,10 @@ public class Character : MonoBehaviour
 		if(coll.tag == "Box")
 		{
 			Stack.instance.PickUp(coll.gameObject.transform);
-            Debug.Log("Box Trigger");
 		}
         if(coll.tag == "EndOfTrack")
 		{
+			GetComponent<BoxCollider>().enabled = false;
 			AnimationAndMovementController.instance.IsInEndOfTrack = true;
 		}
 	}

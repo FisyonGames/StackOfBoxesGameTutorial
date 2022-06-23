@@ -4,31 +4,35 @@ using UnityEngine;
 
 public class Box : MonoBehaviour
 {
-    [SerializeField] private bool isKicked;
-    [SerializeField] private Transform truckStackPoint;
+    private bool isKicked;
 
+    private Transform truckBedToStack;
     private Rigidbody rigidbody;
 
-    private void Awake()
+    private Vector3 targetPositionToLerp;
+    private float lerpSpeed = 5.0f;
+
+    private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
+        truckBedToStack = GameObject.FindGameObjectWithTag("TruckBedToStack").transform;
     }
 
-    public bool IsKicked { get { return isKicked; } set { isKicked = value; } }
+    public bool IsKicked 
+    { 
+        get { return isKicked; } 
+        set 
+        { 
+            isKicked = value;
+            SetValuesBeforeStackToTruckBed();
+        } 
+    }
 
-    private void Update()
+    private void FixedUpdate()
     {
         if(isKicked)
         {
-            Debug.Log(gameObject.name + " kutusu ýsKicked: " + isKicked);
-            transform.parent = truckStackPoint;
-
-            rigidbody.isKinematic = false;
-
-            Vector3 truckStuckPointPosition = truckStackPoint.position;
-            //Debug.Log(gameObject.name + " Slerp Value: " + Vector3.Slerp(transform.position, truckStuckPointPosition, Time.deltaTime * 25.0f));
-            //transform.position = Vector3.MoveTowards(transform.position, truckStuckPointPosition, 5.0f * Time.deltaTime);
-            rigidbody.AddForce(Vector3.forward * 750.0f);
+            transform.position = Vector3.Lerp(transform.position, targetPositionToLerp, lerpSpeed * Time.deltaTime);
         }
     }
 
@@ -42,11 +46,24 @@ public class Box : MonoBehaviour
             {
                 Destroy(transform.parent.GetChild(i).gameObject);
             }
-
-            Stack.instance.PrevObject = transform.parent.GetChild(index - 1);
         }
     }
 
+    void SetValuesBeforeStackToTruckBed()
+    {
+        float zTargetValueToLerp = truckBedToStack.childCount / 8;
+        float yTargetValueToLerp = (truckBedToStack.childCount % 8) / 4;
+        float xTargetValueToLerp = (truckBedToStack.childCount % 8) % 4;
 
+        targetPositionToLerp = new Vector3( truckBedToStack.position.x + xTargetValueToLerp * transform.lossyScale.x,
+                                            truckBedToStack.position.y + yTargetValueToLerp * transform.lossyScale.y,
+                                            truckBedToStack.position.z - zTargetValueToLerp * transform.lossyScale.z
+                                          );
+        
+        transform.parent = truckBedToStack;
+
+        rigidbody.isKinematic = false;
+        
+    }
 
 }

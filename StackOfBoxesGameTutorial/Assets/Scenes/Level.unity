@@ -158,8 +158,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &7010815
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -174,7 +172,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &10387127
 GameObject:
@@ -231,8 +229,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &28406528
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -247,7 +243,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &28406529
 BoxCollider:
@@ -768,8 +764,8 @@ GameObject:
   m_Component:
   - component: {fileID: 114256509}
   m_Layer: 0
-  m_Name: TruckStackPoint
-  m_TagString: Untagged
+  m_Name: TruckBedToStack
+  m_TagString: TruckBedToStack
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -782,7 +778,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 114256508}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 1.3, z: 1.18}
+  m_LocalPosition: {x: -0.82, y: 1.63, z: 1.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2085635454}
@@ -2257,8 +2253,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &378891093
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2273,7 +2267,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &378891094
 BoxCollider:
@@ -2323,8 +2317,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &390816167
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2339,7 +2331,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &392492188
 PrefabInstance:
@@ -2715,7 +2707,7 @@ GameObject:
   m_Component:
   - component: {fileID: 488321686}
   m_Layer: 0
-  m_Name: Boxes
+  m_Name: BoxesOnGround
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3089,8 +3081,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &573214185
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3105,7 +3095,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &616613893
 PrefabInstance:
@@ -3362,8 +3352,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &711112640
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3378,7 +3366,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &724424055
 PrefabInstance:
@@ -4260,8 +4248,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &914154022
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4276,7 +4262,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &933652152 stripped
 GameObject:
@@ -4313,8 +4299,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &933652156
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4329,7 +4313,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &950631239
 PrefabInstance:
@@ -4515,7 +4499,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!114 &963289976
 MonoBehaviour:
@@ -4529,8 +4513,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!1001 &964051987
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4867,8 +4849,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &1027396478
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4883,7 +4863,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &1029737631
 PrefabInstance:
@@ -5224,8 +5204,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &1110961270
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5240,7 +5218,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &1110961271
 BoxCollider:
@@ -5290,8 +5268,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &1132143115
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5306,7 +5282,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &1135903079
 PrefabInstance:
@@ -5441,8 +5417,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &1190608399
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5457,7 +5431,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &1192440725 stripped
 GameObject:
@@ -5494,8 +5468,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &1192440729
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5510,7 +5482,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &1213903229
 PrefabInstance:
@@ -5795,8 +5767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &1281382975
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5811,7 +5781,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &1281382976
 BoxCollider:
@@ -6243,8 +6213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &1363860259
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6259,7 +6227,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &1363860260
 BoxCollider:
@@ -6383,8 +6351,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &1378407583
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6399,7 +6365,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &1380900034 stripped
 GameObject:
@@ -6436,8 +6402,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &1380900038
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -6452,7 +6416,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &1426048747
 PrefabInstance:
@@ -7584,9 +7548,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1611894469}
+  - component: {fileID: 1611894470}
   m_Layer: 0
   m_Name: Boxes
-  m_TagString: Untagged
+  m_TagString: Boxes
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -7606,6 +7571,18 @@ Transform:
   m_Father: {fileID: 1349414215}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1611894470
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1611894468}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 920eabddc90df364988a922d6e69721d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1635542070
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7715,8 +7692,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &1643998267
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7731,7 +7706,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1 &1645069844
 GameObject:
@@ -7990,8 +7965,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &1732737366
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8006,7 +7979,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &1732737367
 BoxCollider:
@@ -8208,8 +8181,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &1813738839
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8224,7 +8195,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &1840012706
 PrefabInstance:
@@ -8636,8 +8607,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &1936677694
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8652,7 +8621,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &1936677695
 BoxCollider:
@@ -9237,8 +9206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &2041782875
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9253,7 +9220,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!65 &2041782876
 BoxCollider:
@@ -9451,8 +9418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &2066900911
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9467,7 +9432,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &2081072166
 PrefabInstance:
@@ -9582,8 +9547,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b2fce87e8921804c839625b99966757, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isKicked: 0
-  truckStackPoint: {fileID: 114256509}
 --- !u!54 &2100285209
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -9598,7 +9561,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!1001 &2123649459
 PrefabInstance:

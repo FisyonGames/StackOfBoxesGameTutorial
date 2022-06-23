@@ -10,16 +10,11 @@ public class Stack : MonoBehaviour
     [SerializeField] private Transform previousObject;
     [SerializeField] private Transform parent;
 
-    public Queue<Transform> stackedBoxes;
-
-    public Transform PrevObject{ get {return previousObject; }  set { previousObject = value;} }
+    public Transform PreviousObject { get {return previousObject; }  set { previousObject = value;} }
 
     private void Awake()
     {
         if(instance == null) instance = this;
-
-        stackedBoxes = new Queue<Transform>();
-        stackedBoxes.Enqueue(previousObject);
     }
 
     void Start()
@@ -32,9 +27,9 @@ public class Stack : MonoBehaviour
     }
     public void PickUp(Transform pickedObject)
     {
-        pickedObject.parent = parent;
+        previousObject = Boxes.instance.transform.GetChild(Boxes.instance.transform.childCount - 1);
 
-        stackedBoxes.Enqueue(pickedObject);
+        pickedObject.parent = parent;
 
         Vector3 desPos = previousObject.localPosition;
         desPos.y += distanceBetweenObjects;

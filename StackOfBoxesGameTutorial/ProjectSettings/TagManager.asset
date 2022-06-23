@@ -8,6 +8,8 @@ TagManager:
   - EndOfTrack
   - Obstacle
   - FirstBox
+  - TruckBedToStack
+  - Boxes
   layers:
   - Default
   - TransparentFX
